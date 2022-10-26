@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
     attr.mq_curmsgs = 0;
 
     printf("Server: benvenuto! \n");
-    qd_server = mq_open(SERVER_QUEUE_NAME, O_RDONLY|O_CREAT, QUEUE_PERMISSION, &attr);
+    qd_server = mq_open(SERVER_QUEUE_NAME, O_RDONLY|O_CREAT, QUEUE_PERMISSION, &attr); //creo un buffer per leggere msg dal client
 
     while(1){
         /*preleva dalla coda il messaggio con priorità più alta*/
